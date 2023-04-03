@@ -10,12 +10,8 @@ const port = PORT || 8080;
 app.use(cors({ origin: CLIENT_URL }));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    knex('characters')
-        .then((data) => {
-            res.status(200).json(data);
-        })
-        .catch((err) => console.log(err));
-})
+const characterRoutes = require('./routes/characters')
+
+app.use('/characters', characterRoutes);
 
 app.listen(port, () => console.log(`Listening on ${port}`));
