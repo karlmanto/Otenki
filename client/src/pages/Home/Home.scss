@@ -1,0 +1,102 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes buttonsFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &__hero {
+        @include tablet {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-left: 2rem;
+        }
+    }
+
+    &__message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+        animation: textFadeIn 2s ease-in-out;
+
+        @include tablet {
+            padding-top: 0;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__logo {
+        width: 100vw;
+        max-width: 24rem;
+        animation: logoFadeIn 2s ease-in-out;
+    }
+
+    &__links {
+        display: flex;
+        gap: 1rem;
+        animation: buttonsFadeIn 4s ease-in-out;
+
+        @include tablet {
+            gap: 2rem;
+        }
+    }
+
+    &__button {
+        background-color: $green;
+        border: none;
+        border-radius: 0.8rem;
+        padding: 0.25rem 2rem;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $dark-green;
+            transition: 0.25s;
+        }
+    }
+}
