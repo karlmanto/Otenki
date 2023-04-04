@@ -824,7 +824,7 @@ exports.seed = async function (knex) {
         },
         {
             japanese: "ん",
-            romaji: "n/m",
+            romaji: "n",
             type: "hiragana",
             consonant: "n/m"
         },
@@ -1250,7 +1250,7 @@ exports.seed = async function (knex) {
         },
         {
             japanese: "ン",
-            romaji: "n/m",
+            romaji: "n",
             type: "katakana",
             consonant: "n/m"
         }
