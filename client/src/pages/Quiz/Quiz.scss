@@ -1,5 +1,101 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeIn 1s ease-in-out;
+
+    @include tablet {
+        font-size: 1.5rem;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        padding-top: 3rem;
+    }
+
+    &__stats {
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__progress {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__accuracy {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__accuracy-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    &__game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        @include tablet {
+            gap: 2rem;
+        }
+    }
+
     &__character {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 5rem;
+        background-color: $paper;
+        color: $black;
+        border-radius: 0.25rem;
+        height: 10rem;
+        width: 12rem;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    &__form {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__input {
+        background-color: $paper;
+        color: $otenki-blue;
+        caret-color: $otenki-blue;
+        outline: none;
+        height: 2.4rem;
+        padding: 1rem;
+        border-radius: 0.8rem;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        border: none;
+    }
+
+    &__submit {
+        padding: 0.25rem 1rem;
+
+        @include tablet {
+            padding: 0.25rem 2rem;
+        }
     }
 }

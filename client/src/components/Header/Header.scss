@@ -49,6 +49,7 @@
 
         &:hover {
             background-color: $otenki-dark-blue;
+            transform: scale(1.05);
             transition: 0.25s;
         }
 

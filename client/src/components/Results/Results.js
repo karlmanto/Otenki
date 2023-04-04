@@ -1,22 +1,30 @@
 import './Results.scss';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from '../Button/Button';
 
 export default function Results({ correct, setCorrect, setIncorrect, setCurrentRound }) {
     const navigate = useNavigate();
     const [message, setMessage] = useState('');
 
     useEffect(() => {
+        if (correct === 20) {
+            setMessage('Perfect!');
+            return;
+        }
         if (correct >= 18) {
             setMessage('Excellent work!');
+            return;
         }
 
         if (correct >= 10 && correct < 18) {
             setMessage('Good work!');
+            return;
         }
 
         if (correct < 10) {
             setMessage('Maybe you need more practice...');
+            return;
         }
     }, [])
 
@@ -32,9 +40,10 @@ export default function Results({ correct, setCorrect, setIncorrect, setCurrentR
         <section className='results'>
             <p className='results__message'>{message}</p>
             <p className='results__score'>Your score was {correct}/20.</p>
-
-            <button onClick={navigateHome}>Home</button>
-            <button onClick={navigateQuiz}>Retry</button>
+            <div className='results__buttons'>
+                <Button buttonClass='results__button' text='Retry' onClick={navigateQuiz} />
+                <Button buttonClass='results__button' text='Home' onClick={navigateHome} />
+            </div>
         </section>
     )
 

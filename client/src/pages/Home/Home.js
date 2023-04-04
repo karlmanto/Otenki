@@ -2,6 +2,7 @@ import './Home.scss';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg'
+import Button from '../../components/Button/Button';
 
 export default function Home() {
     const [displayMessageJP, setdisplayMessageJP] = useState('');
@@ -42,8 +43,14 @@ export default function Home() {
                 <img className='home__logo' src={logo} alt='Otenki logo'></img>
             </div>
             <div className='home__links'>
-                <button className='home__button' onClick={navigateLearn}>Learn</button>
-                <button className='home__button' onClick={navigateQuiz}>Quiz</button>
+                <Button
+                    buttonClass='home__button'
+                    onClick={navigateLearn}
+                    text='Learn' />
+                <Button
+                    buttonClass='home__button'
+                    onClick={navigateQuiz}
+                    text='Quiz' />
             </div>
         </main>
     )

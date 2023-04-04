@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Loading from '../../components/Loading/Loading';
 import Results from '../../components/Results/Results';
+import Button from '../../components/Button/Button';
 
 export default function Quiz() {
     const [currentChar, setCurrentChar] = useState('');
@@ -62,28 +63,28 @@ export default function Quiz() {
 
     return (
         <main className='quiz'>
-            <section className='quiz__game'>
-                <h1 className='quiz__header'>Quiz</h1>
-                <div className='quiz__character'>{currentChar.japanese}</div>
-                <form className='quiz__form' onSubmit={handleSubmit}>
-                    <input className='quiz__input' name='input' value={input} onChange={handleInputChange} placeholder='Type your guess here'></input>
-                    <button className='quiz__enter'>Enter</button>
-                </form>
-            </section>
             <section className='quiz__stats'>
                 <div className='quiz__progress'>
-                    <p className='quiz__progress-text'>Progress: {currentRound}/20</p>
+                    <h1 className='quiz__progress-text'>Progress</h1>
+                    <p className='quiz__progress-count'>{currentRound}/20</p>
                 </div>
                 <div className='quiz__accuracy'>
-                    <div className='quiz__correct'>
-                        <p className='quiz__accuracy-text'>Correct</p>
+                    <div className='quiz__accuracy-card'>
+                        <h3 className='quiz__accuracy-text'>Correct</h3>
                         <p className='quiz__correct-count'>{correct}</p>
                     </div>
-                    <div className='quiz__incorrect'>
-                        <p className='quiz__accuracy-text'>Incorrect</p>
+                    <div className='quiz__accuracy-card'>
+                        <h3 className='quiz__accuracy-text'>Incorrect</h3>
                         <p className='quiz__incorrect-count'>{incorrect}</p>
                     </div>
                 </div>
+            </section>
+            <section className='quiz__game'>
+                <div className='quiz__character'>{currentChar.japanese}</div>
+                <form className='quiz__form' onSubmit={handleSubmit}>
+                    <input autoFocus className='quiz__input' name='input' value={input} onChange={handleInputChange} placeholder='Type your guess here'></input>
+                    <Button buttonClass='quiz__submit' text='Submit' />
+                </form>
             </section>
         </main>
     )
