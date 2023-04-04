@@ -43,15 +43,17 @@
         border-radius: 0.8rem;
         padding: 0.25rem 1rem;
 
+        @include tablet {
+            font-size: 1.25rem;
+        }
+
         &:hover {
             background-color: $otenki-dark-blue;
-            text-decoration: underline;
             transition: 0.25s;
         }
 
         &--active {
             background-color: $otenki-dark-blue;
-            text-decoration: underline;
         }
     }
 }
