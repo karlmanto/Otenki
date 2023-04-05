@@ -1,0 +1,41 @@
+@use '../../styles/partials/mixins' as *;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    gap: 1rem;
+    animation: fadeIn 1s ease-in-out;
+
+    &__characters {
+        font-size: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__option {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &__characters-input {
+        cursor: pointer;
+    }
+
+    &__characters-type {
+        cursor: pointer;
+    }
+}

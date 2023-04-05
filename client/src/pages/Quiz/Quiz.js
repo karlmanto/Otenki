@@ -1,6 +1,7 @@
 import './Quiz.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';
 import Results from '../../components/Results/Results';
 import Button from '../../components/Button/Button';
@@ -12,14 +13,14 @@ export default function Quiz() {
     const [incorrect, setIncorrect] = useState(0);
     const [input, setInput] = useState('');
 
+    const { characters } = useParams();
 
     useEffect(() => {
         fetchCharacter();
     }, [])
 
-
     const fetchCharacter = () => {
-        axios.get('http://localhost:8080/characters/all')
+        axios.get(`http://localhost:8080/characters/${characters}`)
             .then(res => {
                 const charArray = res.data;
                 const randomNum = Math.floor(Math.random() * res.data.length)
