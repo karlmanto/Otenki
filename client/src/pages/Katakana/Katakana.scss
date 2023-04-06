@@ -1,0 +1,14 @@
+@use '../../styles/partials/mixins' as *;
+
+.katakana {
+    &__charts {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+}
