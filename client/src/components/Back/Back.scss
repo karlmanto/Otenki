@@ -1,0 +1,20 @@
+.back {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    width: 5rem;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: 0.25s;
+    }
+
+    &__arrow {
+        width: 1.5rem;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+    }
+}
