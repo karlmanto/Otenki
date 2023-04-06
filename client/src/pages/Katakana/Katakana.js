@@ -2,6 +2,7 @@ import './Katakana.scss';
 import Back from '../../components/Back/Back';
 import BasicChart from '../../components/BasicChart/BasicChart';
 import CombinationChart from '../../components/CombinationChart/CombinationChart';
+import ModifiedChart from '../../components/ModifiedChart/ModifiedChart';
 
 export default function Katakana() {
 
@@ -16,6 +17,7 @@ export default function Katakana() {
             <section className='katakana__charts'>
                 <BasicChart type='katakana' />
                 <CombinationChart type='katakana' />
+                <ModifiedChart type='hiragana' />
             </section>
         </main>
     )

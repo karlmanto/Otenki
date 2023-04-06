@@ -2,6 +2,7 @@ import './Hiragana.scss';
 import Back from '../../components/Back/Back';
 import BasicChart from '../../components/BasicChart/BasicChart';
 import CombinationChart from '../../components/CombinationChart/CombinationChart';
+import ModifiedChart from '../../components/ModifiedChart/ModifiedChart';
 
 export default function Hiragana() {
 
@@ -16,6 +17,7 @@ export default function Hiragana() {
             <section className='hiragana__charts'>
                 <BasicChart type='hiragana' />
                 <CombinationChart type='hiragana' />
+                <ModifiedChart type='hiragana' />
             </section>
         </main>
     )

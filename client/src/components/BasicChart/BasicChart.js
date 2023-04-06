@@ -35,7 +35,6 @@ export default function BasicChart({ type }) {
             .catch(err => console.log(err.message));
     }, [])
 
-    console.log(vowels, k, s, t, n, h, m, y, r, w, nm);
 
     if (!vowels || !k || !s || !t || !n || !h || !m || !y || !r || !w || !nm) {
         return <Loading />

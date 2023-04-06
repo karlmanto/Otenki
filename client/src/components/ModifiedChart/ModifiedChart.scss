@@ -1,0 +1,39 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.modified-chart {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    &__header {
+        padding: 0 0 1rem 1rem;
+    }
+
+    &__row {
+        display: flex;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid $white;
+        border-radius: 0.8rem;
+        width: 20%;
+        height: 4.625rem;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: 0.25s;
+        }
+
+        @include tablet {
+            width: 4.25rem;
+        }
+    }
+
+    &__japanese {
+        font-size: 2rem;
+    }
+}
