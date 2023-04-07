@@ -17,7 +17,7 @@ export default function Katakana() {
             <section className='katakana__charts'>
                 <BasicChart type='katakana' />
                 <CombinationChart type='katakana' />
-                <ModifiedChart type='hiragana' />
+                <ModifiedChart type='katakana' />
             </section>
         </main>
     )
