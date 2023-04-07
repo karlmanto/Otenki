@@ -646,31 +646,31 @@ exports.seed = async function (knex) {
             japanese: "は",
             romaji: "ha",
             type: "hiragana",
-            consonant: "f"
+            consonant: "h"
         },
         {
             japanese: "ひ",
             romaji: "hi",
             type: "hiragana",
-            consonant: "f"
+            consonant: "h"
         },
         {
             japanese: "ふ",
             romaji: "fu",
             type: "hiragana",
-            consonant: "f"
+            consonant: "h"
         },
         {
             japanese: "へ",
             romaji: "he",
             type: "hiragana",
-            consonant: "f"
+            consonant: "h"
         },
         {
             japanese: "ほ",
             romaji: "ho",
             type: "hiragana",
-            consonant: "f"
+            consonant: "h"
         },
         {
             japanese: "ば",
