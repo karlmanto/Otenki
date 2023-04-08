@@ -8,7 +8,7 @@ import iSound from '../../assets/audio/i.wav'
 import oSound from '../../assets/audio/o.wav'
 import uSound from '../../assets/audio/u.wav'
 
-export default function BasicChart({ type }) {
+export default function BasicChart({ type, visible }) {
     const [vowels, setVowels] = useState('');
     const [k, setK] = useState('');
     const [s, setS] = useState('');
@@ -20,6 +20,8 @@ export default function BasicChart({ type }) {
     const [r, setR] = useState('');
     const [w, setW] = useState('');
     const [nm, setNm] = useState('');
+
+    const [romajiClass, setRomajiClass] = useState('chart__romaji');
 
     const a = new Audio(aSound);
     const e = new Audio(eSound);
@@ -44,6 +46,14 @@ export default function BasicChart({ type }) {
             u.play();
         }
     }
+
+    useEffect(() => {
+        if (!visible) {
+            setRomajiClass('chart__romaji--hidden');
+            return;
+        }
+        setRomajiClass('chart__romaji');
+    }, [visible])
 
     useEffect(() => {
         axios.get(`http://localhost:8080/characters/${type}`)
@@ -77,7 +87,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id} onClick={() => playSound(char.romaji)}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -87,7 +97,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -97,7 +107,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -107,7 +117,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -117,7 +127,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -127,7 +137,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -137,7 +147,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -147,7 +157,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -157,7 +167,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -167,7 +177,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -177,7 +187,7 @@ export default function BasicChart({ type }) {
                     return (
                         <div className='chart__item' key={char.id}>
                             <p className='chart__japanese'>{char.japanese}</p>
-                            <p className='chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}

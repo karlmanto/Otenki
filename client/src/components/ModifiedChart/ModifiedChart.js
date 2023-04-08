@@ -3,12 +3,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Loading from '../../components/Loading/Loading';
 
-export default function ModifiedChart({ type }) {
+export default function ModifiedChart({ type, visible }) {
     const [g, setG] = useState('');
     const [z, setZ] = useState('');
     const [d, setD] = useState('');
     const [b, setB] = useState('');
     const [p, setP] = useState('');
+
+    const [romajiClass, setRomajiClass] = useState('modified-chart__romaji');
 
     useEffect(() => {
         axios.get(`http://localhost:8080/characters/${type}`)
@@ -22,6 +24,14 @@ export default function ModifiedChart({ type }) {
             })
     }, []);
 
+    useEffect(() => {
+        if (!visible) {
+            setRomajiClass('modified-chart__romaji--hidden');
+            return;
+        }
+        setRomajiClass('modified-chart__romaji');
+    }, [visible])
+
     if (!g || !z || !d || !b || !p) {
         return <Loading />
     }
@@ -34,7 +44,7 @@ export default function ModifiedChart({ type }) {
                     return (
                         <div className='modified-chart__item' key={char.id}>
                             <p className='modified-chart__japanese'>{char.japanese}</p>
-                            <p className='modified-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -44,7 +54,7 @@ export default function ModifiedChart({ type }) {
                     return (
                         <div className='modified-chart__item' key={char.id}>
                             <p className='modified-chart__japanese'>{char.japanese}</p>
-                            <p className='modified-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -54,7 +64,7 @@ export default function ModifiedChart({ type }) {
                     return (
                         <div className='modified-chart__item' key={char.id}>
                             <p className='modified-chart__japanese'>{char.japanese}</p>
-                            <p className='modified-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -64,7 +74,7 @@ export default function ModifiedChart({ type }) {
                     return (
                         <div className='modified-chart__item' key={char.id}>
                             <p className='modified-chart__japanese'>{char.japanese}</p>
-                            <p className='modified-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -74,7 +84,7 @@ export default function ModifiedChart({ type }) {
                     return (
                         <div className='modified-chart__item' key={char.id}>
                             <p className='modified-chart__japanese'>{char.japanese}</p>
-                            <p className='modified-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}

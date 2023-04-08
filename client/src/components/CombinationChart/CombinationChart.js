@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Loading from '../Loading/Loading';
 
-export default function CombinationChart({ type }) {
+export default function CombinationChart({ type, visible }) {
     const [ky, setKy] = useState('');
     const [gy, setGy] = useState('');
     const [sh, setSh] = useState('');
@@ -15,6 +15,16 @@ export default function CombinationChart({ type }) {
     const [my, setMy] = useState('');
     const [py, setPy] = useState('');
     const [ry, setRy] = useState('');
+
+    const [romajiClass, setRomajiClass] = useState('combination-chart__romaji');
+
+    useEffect(() => {
+        if (!visible) {
+            setRomajiClass('combination-chart__romaji--hidden');
+            return;
+        }
+        setRomajiClass('combination-chart__romaji');
+    }, [visible])
 
     useEffect(() => {
         axios.get(`http://localhost:8080/characters/${type}`)
@@ -47,7 +57,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -57,7 +67,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -67,7 +77,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -77,7 +87,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -87,7 +97,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -97,7 +107,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -107,7 +117,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -117,7 +127,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -127,7 +137,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -137,7 +147,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
@@ -147,7 +157,7 @@ export default function CombinationChart({ type }) {
                     return (
                         <div className='combination-chart__item' key={char.id}>
                             <p className='combination-chart__japanese'>{char.japanese}</p>
-                            <p className='combination-chart__romaji'>{char.romaji}</p>
+                            <p className={romajiClass}>{char.romaji}</p>
                         </div>
                     )
                 })}
