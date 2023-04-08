@@ -1,0 +1,42 @@
+@use '../../styles/partials/mixins' as *;
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    animation: fadeIn 1s ease-in-out;
+
+    @include tablet {
+        flex-direction: row;
+        padding: 2rem;
+        gap: 3rem;
+    }
+
+    &__image {
+        width: 18rem;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__header {
+        font-size: 3rem;
+
+        @include tablet {
+            font-size: 4rem;
+        }
+    }
+
+    &__text {
+        padding-bottom: 1rem;
+
+        @include tablet {
+            font-size: 1.5rem;
+        }
+    }
+}

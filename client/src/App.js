@@ -7,6 +7,7 @@ import QuizSelect from './pages/QuizSelect/QuizSelect';
 import Hiragana from './pages/Hiragana/Hiragana';
 import Katakana from './pages/Katakana/Katakana';
 import Header from './components/Header/Header';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/learn' element={<Learn />}></Route>
           <Route path='/learn/hiragana' element={<Hiragana />}></Route>
           <Route path='/learn/katakana' element={<Katakana />}></Route>
+          <Route path='*' element={<NotFound />}></Route>
         </Routes>
       </div >
     </BrowserRouter>
