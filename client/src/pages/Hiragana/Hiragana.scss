@@ -1,12 +1,13 @@
 @use '../../styles/partials/mixins' as *;
 
 .hiragana {
+    animation: fadeIn 1s ease-in-out;
+
     &__charts {
         display: flex;
         flex-direction: column;
 
         @include tablet {
-            // justify-content: center;
             flex-direction: row;
             flex-wrap: wrap;
         }
