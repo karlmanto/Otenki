@@ -1,0 +1,25 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.recent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 14rem;
+    gap: 1rem;
+
+    &__header {
+        font-size: 2rem;
+    }
+
+    &__row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__score {
+        font-size: 1.25rem;
+    }
+}

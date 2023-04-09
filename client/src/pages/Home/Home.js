@@ -28,6 +28,18 @@ export default function Home() {
         setdisplayMessageENG('Good Morning');
     }, [])
 
+    useEffect(() => {
+        const scores = localStorage.getItem('scores');
+        const scoresJSON = JSON.parse(scores);
+
+        if (scores && scoresJSON.length > 5) {
+            const recentScores = scoresJSON.slice(0, 5);
+            localStorage.setItem('scores', JSON.stringify(recentScores));
+            return;
+        }
+        localStorage.setItem('scores', '[]');
+    }, []);
+
 
     const navigateLearn = () => navigate('/learn');
     const navigateQuiz = () => navigate('/quiz');

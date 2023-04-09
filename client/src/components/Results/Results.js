@@ -16,7 +16,6 @@ export default function Results({ correct, setCorrect, setIncorrect, setCurrentR
             setMessage('Excellent work!');
             return;
         }
-
         if (correct >= 10 && correct < 18) {
             setMessage('Good work!');
             return;
@@ -26,6 +25,17 @@ export default function Results({ correct, setCorrect, setIncorrect, setCurrentR
             setMessage('Maybe you need more practice...');
             return;
         }
+    }, [])
+
+    useEffect(() => {
+        const scores = localStorage.getItem('scores');
+        const scoresJSON = JSON.parse(scores);
+        const recentQuiz = {
+            date: Date.now(),
+            score: correct
+        }
+        const newScores = [recentQuiz, ...scoresJSON];
+        localStorage.setItem('scores', JSON.stringify(newScores));
     }, [])
 
     const navigateHome = () => navigate('/');
