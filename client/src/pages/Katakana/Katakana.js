@@ -20,7 +20,8 @@ export default function Katakana() {
                 <Button buttonClass='katakana__button' onClick={clickHandler} text='Toggle romaji' />
             </div>
             <section className='katakana__description'>
-                <h1>What is Katakana?</h1>
+                <h1 className='katakana__header'>What is Katakana?</h1>
+                <p className='katakana__text'>Katakana is one of the basic Japanese writing systems. Its literal meaning is "fragmentary," due to its characters being derived from the more complex Kanji system. Katakana's use is typically reserved for non-Japanese loanwords, onomatopoeia, and foreign names.</p>
             </section>
             <section className='katakana__charts'>
                 <BasicChart type='katakana' visible={visible} />

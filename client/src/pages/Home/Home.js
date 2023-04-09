@@ -5,6 +5,8 @@ import logo from '../../assets/images/logo.svg'
 import Button from '../../components/Button/Button';
 
 export default function Home() {
+    const [scoreList, setScoreList] = useState([]);
+
     const [displayMessageJP, setdisplayMessageJP] = useState('');
     const [displayMessageENG, setdisplayMessageENG] = useState('');
 
@@ -35,6 +37,10 @@ export default function Home() {
         if (scores && scoresJSON.length > 5) {
             const recentScores = scoresJSON.slice(0, 5);
             localStorage.setItem('scores', JSON.stringify(recentScores));
+            return;
+        }
+        if (scores) {
+            setScoreList(JSON.parse(scores));
             return;
         }
         localStorage.setItem('scores', '[]');

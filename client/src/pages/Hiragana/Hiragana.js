@@ -20,7 +20,8 @@ export default function Hiragana() {
                 <Button buttonClass='hiragana__button' onClick={clickHandler} text='Toggle romaji' />
             </div>
             <section className='hiragana__description'>
-                <h1>What is Hiragana?</h1>
+                <h1 className='hiragana__header'>What is Hiragana?</h1>
+                <p className='hiragana__text'>Hiragana is one of the basic Japanese writing systems. Its literal meaning translates to "flowing" and it is used primarily to write native Japanese words and grammatical elements.</p>
             </section>
             <section className='hiragana__charts'>
                 <BasicChart type='hiragana' visible={visible} />
