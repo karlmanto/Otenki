@@ -43,6 +43,8 @@ Clone the repo
    git clone git@github.com:karlmanto/Otenki.git
    ```
 
+Create a .env file in the server directory using the .env.example file as a guideline.
+
 #### Server
 
 1. cd into server directory
