@@ -37,7 +37,9 @@ export default function Quiz() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (e.target.input.value === currentChar.romaji) {
+        const input = e.target.input.value;
+
+        if (input.toLowerCase() === currentChar.romaji) {
             fetchCharacter();
             setCorrect(correct + 1);
             setCurrentRound(currentRound + 1);
