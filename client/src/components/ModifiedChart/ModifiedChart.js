@@ -4,6 +4,8 @@ import axios from 'axios';
 import Loading from '../../components/Loading/Loading';
 
 export default function ModifiedChart({ type, visible }) {
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const [g, setG] = useState('');
     const [z, setZ] = useState('');
     const [d, setD] = useState('');
@@ -13,7 +15,7 @@ export default function ModifiedChart({ type, visible }) {
     const [romajiClass, setRomajiClass] = useState('modified-chart__romaji');
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/characters/${type}`)
+        axios.get(`${API_URL}characters/${type}`)
             .then(res => {
                 const characters = res.data;
                 setG(characters.filter(character => character.consonant === 'g'));

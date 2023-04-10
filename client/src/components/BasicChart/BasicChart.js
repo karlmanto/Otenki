@@ -9,6 +9,8 @@ import oSound from '../../assets/audio/o.wav'
 import uSound from '../../assets/audio/u.wav'
 
 export default function BasicChart({ type, visible }) {
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const [vowels, setVowels] = useState('');
     const [k, setK] = useState('');
     const [s, setS] = useState('');
@@ -56,7 +58,7 @@ export default function BasicChart({ type, visible }) {
     }, [visible])
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/characters/${type}`)
+        axios.get(`${API_URL}characters/${type}`)
             .then(res => {
                 const characters = res.data;
                 setVowels(characters.filter(character => character.consonant === 'none'));

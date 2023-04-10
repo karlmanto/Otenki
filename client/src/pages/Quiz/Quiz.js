@@ -7,6 +7,8 @@ import Results from '../../components/Results/Results';
 import Button from '../../components/Button/Button';
 
 export default function Quiz() {
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const [currentChar, setCurrentChar] = useState('');
     const [currentRound, setCurrentRound] = useState(1);
     const [correct, setCorrect] = useState(0);
@@ -20,7 +22,7 @@ export default function Quiz() {
     }, [])
 
     const fetchCharacter = () => {
-        axios.get(`http://localhost:8080/characters/${characters}`)
+        axios.get(`${API_URL}characters/${characters}`)
             .then(res => {
                 const charArray = res.data;
                 const randomNum = Math.floor(Math.random() * res.data.length)

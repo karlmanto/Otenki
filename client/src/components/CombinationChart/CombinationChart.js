@@ -4,6 +4,8 @@ import axios from 'axios';
 import Loading from '../Loading/Loading';
 
 export default function CombinationChart({ type, visible }) {
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const [ky, setKy] = useState('');
     const [gy, setGy] = useState('');
     const [sh, setSh] = useState('');
@@ -27,7 +29,7 @@ export default function CombinationChart({ type, visible }) {
     }, [visible])
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/characters/${type}`)
+        axios.get(`${API_URL}characters/${type}`)
             .then(res => {
                 const characters = res.data
                 setKy(characters.filter(character => character.consonant === 'ky'));
