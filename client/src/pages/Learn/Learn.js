@@ -14,11 +14,11 @@ export default function Learn() {
             <section className='learn__cards'>
                 <div className='learn__card' onClick={navigateHiragana}>
                     <div className='learn__overlay'>Hiragana ひらがな</div>
-                    <video className='learn__video' src={mountFuji} autoPlay loop muted />
+                    <video className='learn__video' src={mountFuji} autoPlay loop muted playsInline />
                 </div>
                 <div className='learn__card' onClick={navigateKatakana}>
                     <div className='learn__overlay'>Katakana カタカナ</div>
-                    <video className='learn__video' src={road} autoPlay loop muted />
+                    <video className='learn__video' src={road} autoPlay loop muted playsInline />
                 </div>
             </section>
         </main>
